@@ -1,0 +1,58 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #212529;
+  color: #212529;
+  text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  color: #007bff;
+  margin: 0rem 0 0 15rem;
+  font-size: 3rem;
+  font-weight: normal;
+}
+img {
+  width: 200px;
+  margin-right: 1.5rem;
+}
+
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 8rem;
+  margin-right: 3rem;
+}
+
+.film {
+  background-color: #f2f2f2;
+  width: 90%;
+  height: 70%;
+  display: flex;
+  border: 1px solid #f2f2f2;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 20px;
+}
+
+@media (min-width: 200px) and (max-width: 500px) {
+  .movies-container {
+    grid-template-columns: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .film {
+    width: 100%;
+    width: 100%;
+  }
+}
