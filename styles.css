@@ -36,6 +36,13 @@ img {
   width: 200px;
 }
 
+input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
 .container {
   padding: 10px 60px;
 }
@@ -49,7 +56,7 @@ img {
   grid-auto-flow: row;
   row-gap: 30px;
   column-gap: 50px;
-
+  padding-top: 20px;
 }
 
 .film {
@@ -75,6 +82,10 @@ img {
   fill: #FFF;
   transform-origin: 44% 50%;
   animation: rotate 1.5s infinite linear;
+}
+
+.stuff {
+  display: none;
 }
 
 @keyframes rotate {
