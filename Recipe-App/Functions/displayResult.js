@@ -1,3 +1,5 @@
+import getClickedRecipe from './getClickedRecipe';
+
 const domElements = {
     results: document.querySelector('.results')
 }
@@ -10,6 +12,7 @@ const displayResult = (results) => {
         const resultLink = document.createElement('a');
         resultLink.className = "preview-link preview-link-active";
         resultLink.setAttribute('href', `#${item.recipe_id}`);
+        resultLink.id = `${item.recipe_id}`;
 
         const figure = document.createElement('figure');
         figure.classList.add('preview-fig');
@@ -21,7 +24,7 @@ const displayResult = (results) => {
         const resultData = document.createElement('div');
         resultData.classList.add('preview-data');
         const resultTitle = document.createElement('h4');
-        resultTitle.classList.add('preview-data');
+        resultTitle.classList.add('preview-title');
         resultTitle.textContent = `${item.title}`;
         const resultPublisher = document.createElement('p');
         resultPublisher.classList.add('preview-publisher');
@@ -43,6 +46,14 @@ const displayResult = (results) => {
         resultItem.append(resultLink);
 
         domElements.results.append(resultItem);
+
+        resultLink.addEventListener('click', (e) => {
+            if (e.target.classList.contains('preview-link')) {
+                const id = e.target.id;
+                console.log(id);
+                getClickedRecipe(id);
+            }
+        })
     });
     
 }
